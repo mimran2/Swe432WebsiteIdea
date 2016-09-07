@@ -1,0 +1,12 @@
+body{
+	background-color: lightgray;
+	font-family: sans-serif;
+	color: white;
+	text-align: center;
+}
+
+.backgroundI{
+	background: url(./images/blackboard.jpg);
+	background-size: 1366px 768px;
+	background-repeat: no-repeat;
+}
