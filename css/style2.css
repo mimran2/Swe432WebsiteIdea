@@ -57,6 +57,11 @@ body input{
 	border-color: green;
 }
 
-input: invalid + div{
-	display: block;
+input, input:valid{
+	border-color: gray;
 }
+
+input:invalid{
+	border-color: red;
+}
+

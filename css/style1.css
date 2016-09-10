@@ -28,3 +28,11 @@ body h1{
 	font-weight: bold;
 }
 
+input, input:valid{
+	border-color: gray;
+}
+
+input:invalid{
+	border-color: red;
+}
+
