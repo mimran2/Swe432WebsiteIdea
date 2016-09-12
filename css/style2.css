@@ -1,0 +1,67 @@
+body{
+	background-color: lightgray;
+	font-family: 'Open Sans',sans-serif;
+	color: green;
+}
+
+.pageWrapper{
+	min-height: 100%;
+	margin-bottom: -140px;
+}
+
+.pageWrapper:after{
+	display: block;
+	content: "";
+}
+
+.sFooter, .pageWrapper:after{
+	height: 140px;
+}
+
+.SFooter{
+	background: orange;
+}
+
+.RegistrationBox{
+	min-width: 700px;
+	width: 80%;
+	height: 80%;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.blankRow{
+	height: 10px;
+	background-color: white;
+}
+
+.buttonOutline{
+	margin: 30px;
+	text-align: center;
+}
+
+.buttonStyle{
+	background-color: #6d6959;
+	color: white;
+	font-weight: bold;
+}
+
+body input{
+	border: 1px;
+	border-style: solid;
+	border-color: green;
+}
+
+input, input:valid{
+	border-color: gray;
+}
+
+input:invalid{
+	border-color: red;
+}
+

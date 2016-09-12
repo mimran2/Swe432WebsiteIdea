@@ -1,0 +1,47 @@
+body{
+	text-align: center;
+	background-color:orange;
+	
+	}
+h1{
+	color: green;
+	text-align:center;
+	}
+h2{
+	color: yellow;
+	text-align:center;
+	}
+form{
+	display:table;
+/* 	text-align:center; */
+	}
+p{
+	display:table-row;
+	
+	}
+label{
+	 display:table-cell;
+	 text-align:left;
+	 }
+input{
+	display:table-cell;
+
+	}
+	/* http://www.w3schools.com/css/css_align.asp to learn how to align*/
+.signinbox
+{
+margin:auto;
+text-align: center;	 
+width:20%;
+border: 2px solid green;
+padding:10px;
+}
+.signupbox
+{
+margin:auto;
+text-align:center;
+width:25%;
+border:2px solid yellow;
+padding:10px;
+
+} 
