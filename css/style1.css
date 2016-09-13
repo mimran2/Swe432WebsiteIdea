@@ -1,0 +1,43 @@
+body{
+	background-color: lightgray;
+	font-family: 'Open Sans',sans-serif;
+	color: green;
+	text-align: center;
+	transition:0.8s;
+	-webkit-transition:0.8s;
+}
+
+body>h1{
+	opacity: 0.5;
+	color: white;
+	margin-top: 100px;
+	transition:0.8s;
+}
+
+.promptBox{
+	background-color: white;
+	border: 1px solid black;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 25%;
+	min-width: 300px;
+	display: inline-block;
+	transition: 0.8s;
+}
+
+.buttonStyle{
+	opacity: 0.7;
+	background-color: #6d6959;
+	color: white;
+	font-weight: bold;
+}
+
+input, input:valid{
+	border-color: gray;
+}
+
+input:invalid{
+	border-color: red;
+

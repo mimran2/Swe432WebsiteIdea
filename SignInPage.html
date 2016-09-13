@@ -1,0 +1,34 @@
+//LOG IN AUTHENTICATION
+
+<!DOCTYPE HTML>
+<html lang = "en-US">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+
+	<title>
+	Open iClicker
+	</title>
+	<link rel="stylesheet" type="text/css" href="./css/style1.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body style="background: url(images/blackboard.jpg) 100% 50% no-repeat; min-width:30%">
+	<title>Open iClicker</title>
+	<main>
+	<h1>WELCOME</h1>
+	<div class="promptBox">
+		<p>Please Sign In Below</p>
+		<form>
+			<p><label>Username: <input type="email" placeholder="Email address" title="Please Enter A Valid Email" /></label>
+			<br>
+			<label>Password: <input type="password" placeholder="password" title="Password can only contain letters, numbers, and !, @, #, $,<,>,?" pattern="^([a-zA-Z0-9@*#]{8,15})$"/></label></p>
+			<p><input type="checkbox" /> Remember Me</p>
+		</form>
+		<button class="buttonStyle" type="button"> SIGN IN</button>
+		<form method="post" action="SignUpPage.html" style="display:inline-block">
+		<button class="buttonStyle" type="submit"> SIGN UP</button>
+		</form>
+	</div>
+	</main>
+</body>
+</html>
