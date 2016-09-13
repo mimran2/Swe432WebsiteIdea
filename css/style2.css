@@ -4,41 +4,43 @@ body{
 	color: green;
 }
 
-.pageWrapper{
-	min-height: 100%;
-	margin-bottom: -140px;
+.pageWrap{
+	width: 100%;
 }
 
-.pageWrapper:after{
-	display: block;
-	content: "";
+
+.rotate{
+	display: inline-block;
+	-ms-transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);
+	transform: rotate(15deg);
 }
 
-.sFooter, .pageWrapper:after{
-	height: 140px;
+.rotate:hover{
+	font-size: 50pt;
 }
 
-.SFooter{
-	background: orange;
+table, label, input {
+    width: 90%;
+}
+
+input[type="checkbox"]{
+	width: auto;
 }
 
 .RegistrationBox{
-	min-width: 700px;
-	width: 80%;
+	transition: 1.6s;
+	width: 800px;
+	max-width: 100%;
 	height: 80%;
 	background-color: white;
 	padding-top: 20px;
 	padding-bottom: 30px;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.blankRow{
-	height: 10px;
-	background-color: white;
-}
 
 .buttonOutline{
 	margin: 30px;
@@ -51,8 +53,7 @@ body{
 	font-weight: bold;
 }
 
-body input{
-	border: 1px;
+body[input]{
 	border-style: solid;
 	border-color: green;
 }
@@ -64,4 +65,7 @@ input, input:valid{
 input:invalid{
 	border-color: red;
 }
+
+
+
 

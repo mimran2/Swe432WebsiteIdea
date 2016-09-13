@@ -1,3 +1,5 @@
+//LOG IN AUTHENTICATION
+
 <!DOCTYPE HTML>
 <html lang = "en-US">
 <meta charset="UTF-8"/>
@@ -12,13 +14,14 @@
 </head>
 <body style="background: url(images/blackboard.jpg) 100% 50% no-repeat; min-width:30%">
 	<title>Open iClicker</title>
+	<main>
 	<h1>WELCOME</h1>
 	<div class="promptBox">
 		<p>Please Sign In Below</p>
 		<form>
 			<p><label>Username: <input type="email" placeholder="Email address" title="Please Enter A Valid Email" /></label>
 			<br>
-			<label>Password: <input type="password" placeholder="password" /></label></p>
+			<label>Password: <input type="password" placeholder="password" title="Password can only contain letters, numbers, and !, @, #, $,<,>,?" pattern="^([a-zA-Z0-9@*#]{8,15})$"/></label></p>
 			<p><input type="checkbox" /> Remember Me</p>
 		</form>
 		<button class="buttonStyle" type="button"> SIGN IN</button>
@@ -26,5 +29,6 @@
 		<button class="buttonStyle" type="submit"> SIGN UP</button>
 		</form>
 	</div>
+	</main>
 </body>
 </html>

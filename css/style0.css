@@ -10,6 +10,7 @@ body h1, h3{
 	color: white;
 	text-align: center;
 	margin-top: 200px;
+	opacity: 0.5;
 }
 
 #floatingButton{
