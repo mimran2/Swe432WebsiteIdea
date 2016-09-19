@@ -66,6 +66,25 @@ body[input]{
 	text-align: center;
 }
 
+#SignInBox{
+	text-align: center;
+}
+
+#MessageBox{
+	margin-top: 250px;
+	text-align: center;
+	background-color: white;
+	padding: 20px;
+	width: 75%;
+	min-width: 300px;
+	display: inline-block;
+}
+
+#SignUpSuccessMsg{
+	text-align: center;
+}
+
+
 .RegistrationBox{
 	width: 800px;
 	max-width: 100%;
@@ -108,9 +127,7 @@ input[type="checkbox"]{
 	display: none;
 }
 
-#SignInBox{
-	text-align: center;
-}
+
 
 
 
