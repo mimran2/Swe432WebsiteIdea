@@ -26,15 +26,7 @@ jQuery(document).ready(function($){
 	});
 });
 
-jQuery(document).ready(function(){
-	$.bind('back',fuction(){
-		historyBack();
-	});
-});
 
-function historyBack(){
-	window.history.pop();
-}
 
 
 
