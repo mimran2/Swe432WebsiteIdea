@@ -4,43 +4,26 @@ jQuery(document).ready(function($){
 		$('#headliner').show(200);
 		$('#SignUpForm').hide(200);
 		$('#SignUpSuccessMsg').hide();
-		/////history.pushState({activePane: 'main'},"");
-		// window.addEventListener('next', history.forward());
-		// window.addEventListener('previous', history.back());
 	});
 	
 	$('#Sign_Up').click(function(){
+		$('input').val('');
 		$('#SignUpForm').show(200);
 		$('#headliner').hide(200);
 		$('#SignInBox').hide(200);
 		$('#SignUpSuccessMsg').hide();
-/////history.pushState({activePane: 'signup'},"");
-		// window.addEventListener('next', function(){
-		// history.pushState(1, null);
-		// history.forward();
-		// });
-		// window.addEventListener('previous', function(){
-		// history.pushState(-1, null);
-		// history.back();
-		// });
 	});
 	$('#cancelButton').click(function(){
+		$('input').val('');
 		$('#SignUpForm').hide(200);
 		$('#headliner').show(200);
 		$('#SignUpSuccessMsg').hide();
-		////////history.pushState({activePane: 'cancel'},"");
-		// window.addEventListener('next', history.forward());
-		// window.addEventListener('previous', history.back());
 	});
 	$('#Sign_Up_Submit').click(function(){
 		$('#SignUpForm').hide(100);
 		$('#SignUpSuccessMsg').show(200);
-		//////history.pushState({activePane:'submit'},"");
-		// window.addEventListener('next', history.forward());
-		// window.addEventListener('previous', history.back());
+		data_process();
 	});
-	// window.addEventListener('next', history.forward());
-	// window.addEventListener('previous', history.back());
 });
 
 //https://gist.github.com/tobytailor/1164818 don't know why it doesnt work
@@ -73,5 +56,70 @@ window.addEventListener('next', function(){
  	window.addEventListener('previous', function(){
  		console.log('back button clicked');
  	}, false);
+
+
+//Store data from the submission form
+
+function data_process(){
+	//Stripping out the username from email for node name
+	var userN = $('#new_user').val();
+	var userName_strip = "";
+	for(var i=0, len=userN.length; i < len; i++){
+		if (userN[i] == "@")
+			break;
+		else{
+			userName_strip += userN[i];
+		}
+	}
+	//creating the node
+	var user = firebase.database().ref('user_list/' + userName_strip);
+
+	//Error checking -- not working yet
+	/*
+	if ($('#new_password').val() == $('#re_new_password').val()){
+		//done
+	}
+	else{
+		//do something
+	}
+	
+	var gender;
+	if ($('#Male').value == "on" && $('#Female').value != "on"){
+		gender = "Male";
+	}
+	else if ($('#Male').value != "on" && $('#Female').value == "on"){
+		gender = "Female";
+	}
+	else{
+		//send error message
+	}
+
+	var occupation;
+	if ($('#Teacher').value == "on" && $('#Student').value != "on"){
+		occupation = "Student";
+	}
+	else if ($('#Teacher').value != "on" && $('#Student').value == "on"){
+		occupation = "Teacher";
+	}
+	else{
+		//send error message
+	}*/
+	//Push everything to Firebase
+	user.set(
+		{username: $('#new_user').val(),
+		password: $('#new_password').val(),
+		question: $('#security_question').val(),
+		answer: $('#security_ans').val(),
+		FirstName: $('#f_name').val(),
+		LastName: $('#l_name').val(),
+		MiddleInitial: $('#m_i').val(),
+		Birthday: $('#DOB').val(),
+		//{Gender: gender},
+		Address: $('#Street').val()+" "+$('#Apt').val()+" "+$('#City').val()+" "+$('#State').val()+" "+$('#ZIP').val(),
+		//{Occupation: occupation},
+		School: $('#school_name').val()}
+	);
+};
+
 
 
