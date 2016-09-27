@@ -82,12 +82,12 @@ function data_process(){
 	else{
 		//do something
 	}
-	
+	*/
 	var gender;
-	if ($('#Male').value == "on" && $('#Female').value != "on"){
+	if ($('#Male').prop("checked") && !$('#Female').prop("checked")){
 		gender = "Male";
 	}
-	else if ($('#Male').value != "on" && $('#Female').value == "on"){
+	else if (!$('#Male').prop("checked") && $('#Female').prop("checked")){
 		gender = "Female";
 	}
 	else{
@@ -95,15 +95,15 @@ function data_process(){
 	}
 
 	var occupation;
-	if ($('#Teacher').value == "on" && $('#Student').value != "on"){
+	if ($('#Teacher').prop("checked") && !($('#Student').prop("checked"))){
 		occupation = "Student";
 	}
-	else if ($('#Teacher').value != "on" && $('#Student').value == "on"){
+	else if (!$('#Teacher').prop("checked") && $('#Student').prop("checked")){
 		occupation = "Teacher";
 	}
 	else{
 		//send error message
-	}*/
+	}
 	//Push everything to Firebase
 	user.set(
 		{username: $('#new_user').val(),
@@ -114,9 +114,9 @@ function data_process(){
 		LastName: $('#l_name').val(),
 		MiddleInitial: $('#m_i').val(),
 		Birthday: $('#DOB').val(),
-		//{Gender: gender},
+		Gender: gender,
 		Address: $('#Street').val()+" "+$('#Apt').val()+" "+$('#City').val()+" "+$('#State').val()+" "+$('#ZIP').val(),
-		//{Occupation: occupation},
+		Occupation: occupation,
 		School: $('#school_name').val()}
 	);
 };
