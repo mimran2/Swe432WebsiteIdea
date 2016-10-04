@@ -1,4 +1,33 @@
 //http://code-maven.com/try/examples/js/todo.html
+import React from "react";
+
+
+// var headline=React.createClass({
+	// render(){ 
+		// return (<h1> Student iClick </h1>
+	// <			h2> One Platform To Unite Us All!</h2>);
+	// }
+// });
+// var todoList=React.createClass({
+	// render(){
+		// return(
+		
+		// <div> class="column">
+		// <div class="ToDoList">
+		// <br>
+		// <!-- http://code-maven.com/todo-in-html-and-javascript-->
+			// <label for="taskList">Make a To Do List</label>
+			// <hr>
+			
+			// <input id="task" placeholder="Task to Complete"><button id="add">Add</button>
+			// <div id="todos"></div>
+			
+		// </div>	
+	  // </div>
+		// );
+	// }
+	
+// });
 function get_todos() //gets all the obj
 {
     var todos = new Array;//array for storing the objs
@@ -13,7 +42,15 @@ function details(lecture)
 	var lectureType=lecture.getAttribute("data-lecture-type");	
 	alert(lecture.innerHTML +" contains: " +lectureType+".");
 }
-
+var jqCal= $.ajax("https://developers.google.com/google-apps/calendar/")
+.done(function() {
+console.log("Result");
+ console.log( jqCal.responseJSON ); // JSON of response data
+});
+jqCal.events.insert(primary, event);
+console.log(jqCal.events.insert(primary, event));
+jqCal.events.update();
+console.log("testing");
 function add() {
     var task = document.getElementById('task').value;
 	document.getElementById("task").value="";//clears the box after adding

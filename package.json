@@ -1,0 +1,17 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "SWE432",
+  "main": "re.js",
+  "scripts": {
+    "test": "t"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "andrewtran",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
