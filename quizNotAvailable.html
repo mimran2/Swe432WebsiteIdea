@@ -2,6 +2,9 @@
 
 <html lang="en">
 <head>
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <meta charset="utf-8">
 	<link rel="stylesheet" href="mainDisplayPage.css">
   <title>Error 404 page not found</title>
@@ -12,9 +15,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
-<h1>Sorry this quiz has not been made available to you yet!</h1>
-<h2>Please contact your professor or try again later</h2>
+
 <body>
-  <script src="js/scripts.js"></script>
+<script type="text/babel">
+var header=React.createClass({
+	render(){
+		return(	
+			<h1>Sorry this quiz has not been made available to you yet!</h1>
+			<h2>Please contact your professor or try again later</h2>
+			);
+		}
+	});	
+  <!-- <script src="js/scripts.js"></script> -->
+  </script>
 </body>
 </html>

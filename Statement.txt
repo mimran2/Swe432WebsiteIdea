@@ -1,9 +1,0 @@
-Mahnoor Imran
-Andrew Tran
-
-
-SWE432 - Statement of Contributions
-
-For this homework assignment, Mahnoor was responsible for implementing the calendar and adding events as a time managing tool for students, while I took care of Firebase and storing data from Registration.
-
-We ran into some problems as neither of us know much about any of this, but Mahnoor was able to get the calendar working. I originally used push() to push an array to the server, but that creates some redundancies so I decided to strip out the username and use it as a node for every user (which would make searching for them easier later on).
