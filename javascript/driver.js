@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+/*jQuery(document).ready(function($){
 	$('#Sign_In').click(function(){
 		$('#SignInBox').toggle(200);
 		$('#headliner').show(200);
@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
 		$('#SignUpSuccessMsg').show(200);
 		data_process();
 	});
-});
+});*/
 
 //https://gist.github.com/tobytailor/1164818 don't know why it doesnt work
 if(window.history && history.pushState){ // check for history api support
