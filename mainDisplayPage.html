@@ -4,111 +4,52 @@
 <head>
   <meta charset="utf-8">
 
+
   <title>Welcome Page</title>
-<script src="https://fb.me/react-15.0.0.js"></script>
-<script src="https://fb.me/react-dom-15.0.0.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="https://fb.me/react-15.3.0.min.js"></script>
+    <script src="https://fb.me/react-dom-15.3.0.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>-->
 <!-- <script src="/javascripts/jquery.min.js"></script>
 <script src="/javascripts/react-with-addons.js"></script>
 <script src="/javascripts/JSXTransformer.js"></script> -->
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <!-- http://code-maven.com/todo-in-html-and-javascript-->
+  <!-- http://code-maven.com/todo-in-html-and-javascript-->
+    <link rel="stylesheet" href="mainDisplayPage.css"/>
+
+
 </head>
 
-<link rel="stylesheet" href="mainDisplayPage.css">
+<!--<script type="text/babel" src = "mainDisplayPage.js"></script>-->
 <body>
-<script type="text/babel">
-	<!-- <h1> Student iClick </h1>
-	<h2> One Platform To Unite Us All!</h2> -->
-	var headline=React.createClass({
-	render(){ 
-		return (<h1> Student iClick </h1>
-	<			h2> One Platform To Unite Us All!</h2>);
-	}
-});
-var todoList=React.createClass({
-	render(){
-		return(
-		
-		<div> class="column">
-		<div class="ToDoList">
-		<br>
-		<!-- http://code-maven.com/todo-in-html-and-javascript-->
-			<label for="taskList">Make a To Do List</label>
-			<hr>
-			
-			<input id="task" placeholder="Task to Complete"><button id="add">Add</button>
-			<div id="todos"></div>
-			
-		</div>	
-	  </div>
-		);
-	}
-	
-});
-	<br>
-	var content=React.createClass({
-		render(){
-			return(
-				<div id="contentBox"> 
-				  <div class="column">
-					<div class="ToDoList">
-					<br>
-				<!-- http://code-maven.com/todo-in-html-and-javascript-->
-					<label for="taskList">Make a To Do List</label>
-					<hr>
-					
-					<input id="task" placeholder="Task to Complete"><button id="add">Add</button>
-					<div id="todos"></div>
-					
-					</div>	
-					</div>	
-					<br>
-				  <div class="column">	
-					<div class="takeQuiz">
-						<label for="quiz">Take a Quiz</label>
-						<hr>
-						<button id="quiz1" onclick="location.href='quizNotAvailable.html';">Quiz1</button>
-						<br>
-						<br>
-						<button id="quiz2" onclick="location.href='quizNotAvailable.html';">Quiz2</button>
-						<br>
-						<br>
-						<button id="quiz3" onclick="location.href='quizNotAvailable.html';">Quiz3</button>
-						<br>
-						<br>
-						<button id="quiz4" onclick="location.href='quizNotAvailable.html';">Quiz4</button>
-						<br>
-						<br>
-						<button id="quiz5" onclick="location.href='quizNotAvailable.html';">Quiz5</button>
-					</div>	
-				  </div>	
-				  <div id="column">	
-					<div class="Lectures">
-					<label for="lectures">Lecture Information</label>
-					<hr>
-						<ul>
-							<li onclick="details(this)" id="lect1" data-lecture-type="Introduction to Html">Lecture 1</li>
-							<li onclick="details(this)" id="lect2" data-lecture-type="CSS and Networking">Lecture 2</li>
-							<li onclick="details(this)" id="lect3" data-lecture-type="Javascript and jQuery">Lecture 3</li>
-							<li onclick="details(this)" id="lect4" data-lecture-type="Classes and Cohesion">Lecture 4</li>
-							<li onclick="details(this)" id="lect5" data-lecture-type="TBA">Lecture 5</li>
-							<li onclick="details(this)" id="lect6" data-lecture-type="TBA">Lecture 6</li>
-							<li onclick="details(this)" id="lect7" data-lecture-type="TBA">Lecture 7</li>
-					
-						</ul>
-					
-					
-					</div>
-				  </div>	
-				  
-				</div>
-			);
-		}
-	});	
-</script>	
-	<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FNew_York" style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe>
-  <script src = "mainDisplayPage.js"></script>
+<!--<script type="text/babel" src = "mainDisplayPage.js"></script>-->
+
+<div id="Element1">
+	<br/>
+</div>
+<div id="Element2"></div>
+
+<div id="Element3">
+    <br/>
+</div>
+
+<div id ="Element4">
+    <br/>
+</div>
+
+
+
+
+
+<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=America%2FNew_York" style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+<!--<script type="text/babel" src = "mainDisplayPage.js"></script>-->
+<script type="text/babel" src="mainDisplayPage.js"></script>
+
 </body>
 </html>

@@ -1,52 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Open iClicker</title>
-    <!--<link rel="stylesheet" href="css/style0.css">*/ -->
-    <script src="https://fb.me/react-15.0.0.js"></script>
-    <script src="https://fb.me/react-dom-15.0.0.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-    <!-- ReactFire -->
-    <script src="https://cdn.firebase.com/libs/reactfire/1.0.0/reactfire.min.js"></script>
-</head>
-<body>
-<div id="floatingButton1">
-</div>
-
-<div id="floatingButton2">
-</div>
-
-<div class="HiddenContent" id="SignInBox">
-</div>
-
-<div class="HiddenContent" id="SignUpForm">	
-</div>
-
-<div id="SubmitButton">
-
-</div>
-
-<div class="HiddenContent" id="SignUpSuccessMsg">
-</div>
-<script type="text/babel">
-	"use strict";
-		//Create and Render 2 buttons
-		var FloatButton1 = React.createClass({
+	var FloatButton1 = React.createClass({
 		getInitialState: function(){
 			return {true};
 		},
 		onClick: function(){
-			Prompt_Box.setState({true}); //Show Prompt Box if clicked
+			Prompt_Box.setState({true});
 		},
 		render: function(){
 			return(
 				<div>
 					<button id="Sign_In" class="BigbuttonStyle" type="submit" onClick={this.onClick}> SIGN IN
 					</button>
+					{Prompt_Box.state ? <Prompt_Box/> : null}
 				</div>
 			);
 		}
@@ -57,19 +21,19 @@
 			return {true};
 		},
 		onClick: function(){
-			Registration.setState({true});//Show Registration form and hide prompt box when clicked
+			Registration.setState({true});
 			Prompt_Box.setState({false});
 		},
 		render: function(){
 			return(
 				<div>
 					<button id="Sign_Up" class="BigbuttonStyle" type="submit" onClick={this.onClick} > SIGN UP</button>
+					{Registration.state ? <Registration/> : null}
 				</div>
 			);
 		}
 	});
 
-	//Render the box to Sign In
 	var Prompt_Box = React.createClass({
 		getInitialState: function(){
 			return {false};
@@ -78,17 +42,18 @@
 			return(
 				<div>
 				<p>Please Sign In Below</p>
+				<form>
 					<p><label>Username: <input id="username" type="email" placeholder="Email address" title="Please Enter A Valid Email" /></label>
 					</p>
 					<p><label>Password: <input type="password" placeholder="password" title="Password can only contain letters, numbers, and !, @, #, $,<,>,?" pattern="^([a-zA-Z0-9@*#]{8,15})$"/></label></p>
 							<p><input type="checkbox" /> Remember Me</p>
-				<button id="SignIN" class="buttonStyle" onclick="location.href='mainDisplayPage.html'"  type="button"> SIGN IN</button>
+				</form>
+				<button class="buttonStyle" onclick="location.href='mainDisplayPage.html'"  type="button"> SIGN IN</button>
 			</div>
 			);
 		}
 	});
 
-	//Render the whole registration form
 	var Registration = React.createClass({
 		getInitialState: function(){
 			return {false};
@@ -100,6 +65,7 @@
 	<section>
 	<div class="RegistrationBox">
 	<h3>Account Information</h3>
+		<form>
 			<table>
 			<tbody>
 				<tr>
@@ -128,13 +94,13 @@
 				</tr>
 			</tbody>
 			</table>
-
+		</form>
 	</div>
 	</section>
 	<section>
 	<div class="RegistrationBox">
 		<h3>Personal Information</h3>
-
+		<form>
 			<table>
 			<tbody>
 				<tr><td><label>First name:<br/><input id="f_name" type="text" pattern="[A-Za-z]" title="First Name" style={{width:'auto'}} /></label></td>
@@ -225,6 +191,7 @@
 				</tr>
 			</tbody>
 			</table>
+		</form>
 	</div>
 	</section>
 	<section>
@@ -252,65 +219,3 @@
 			);
 		}
 	});
-	ReactDOM.render(<FloatButton1/>, document.getElementById('floatingButton1'));
-	ReactDOM.render(<FloatButton2/>, document.getElementById('floatingButton2'));
-
-	ReactDOM.render(<Prompt_Box/>, document.getElementById('SignInBox'));
-
-	ReactDOM.render(<Registration/>, document.getElementById('SignUpForm'));
-</script>
-
-<!-- Load the javascript code that pushes data to Firebase -->
-<script style="text/javascript" src="javascript/driver.js"></script>
-<script type="text/babel">
-	"use strict";
-
-	// Initialize Firebase
-  	var config = {
-    apiKey: "AIzaSyD07drAaWjTIrld1pavuH-LGAVQGflHhXI",
-    authDomain: "swe432-ad1e0.firebaseapp.com",
-    databaseURL: "https://swe432-ad1e0.firebaseio.com",
-    storageBucket: "swe432-ad1e0.appspot.com",
-    messagingSenderId: "292590898387"
-	};
-	firebase.initializeApp(config);
-
-	var user_list = firebase.database().ref("user_list");
-	//Create a new class and take data input from the prompt
-	//And push them to Firebase when user hits Sign Up
-	var DataBinding = React.createClass({
-		getInitialState: function(){
-			return {SubmitData: false};
-		},
-		onClick: function(){
-			this.setState({SubmitData: true});
-			data_process();
-		},
-		render: function(){
-			return(
-				<div class="buttonOutline">
-					<button class="buttonStyle" type="button" id="Sign_Up_Submit" onClick={this.onClick}> SIGN UP</button>
-					<button id="cancelButton" class="buttonStyle" type="submit"> CANCEL</button>
-				</div>
-			);
-		}
-	});
-	ReactDOM.render(<DataBinding/>, document.getElementById('SubmitButton'));
-
-	//Method that looks up data in Firebase when user logs in
-	var LogIn = React.createClass({
-		getInitialState: function(){
-			return {false};
-		},
-
-		onClick: function(){
-			this.setState(true);
-			log_in();
-		},
-		render: function(){
-			return;
-		}
-	});
-</script>
-</body>
-</html>
