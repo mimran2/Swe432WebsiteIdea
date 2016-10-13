@@ -24,7 +24,7 @@
 		$('#SignUpSuccessMsg').show(200);
 		data_process();
 	});
-});*/
+});
 
 //https://gist.github.com/tobytailor/1164818 don't know why it doesnt work
 if(window.history && history.pushState){ // check for history api support
@@ -57,12 +57,9 @@ window.addEventListener('next', function(){
  		console.log('back button clicked');
  	}, false);
 
-
+*/
 //Store data from the submission form
-
-function data_process(){
-	//Stripping out the username from email for node name
-	var userN = $('#new_user').val();
+function user_name_strip(userN){
 	var userName_strip = "";
 	for(var i=0, len=userN.length; i < len; i++){
 		if (userN[i] == "@")
@@ -71,6 +68,13 @@ function data_process(){
 			userName_strip += userN[i];
 		}
 	}
+	return userName_strip;
+};
+
+function data_process(){
+	//Stripping out the username from email for node name
+	var userN = $('#new_user').val();
+	var userName_strip = user_name_strip(userN);
 	//creating the node
 	var user = firebase.database().ref('user_list/' + userName_strip);
 
@@ -121,5 +125,25 @@ function data_process(){
 	);
 };
 
+function log_in(){
+	var userName = $('#username').val();
+	var passWord = $('#PW').val();
 
+	var user_strip = user_name_strip(userName);
+
+	var dBaseRef = firebase.database().ref("user_list/" + user_strip);
+
+	dBaseRef.once("value").then(function(snapshot){
+		if (snapshot.exists()){
+			if (passWord != snapshot.child("password").val())
+				alert("Invalid Password. Please try again!");
+			else{
+				//Serve up info. To be updated later.
+			}
+		}
+		else{
+			alert("Invalid username. Try again or Sign up!");
+		}
+	});
+};
 
